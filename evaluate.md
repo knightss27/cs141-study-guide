@@ -89,16 +89,16 @@
     b. Evaluate `f3b(3, 2)` = `['3p', '3r', '3a', '2p', '2r', '1p']`
 
     ```
-    f3b(3, 2)           > ['3p', '3r', '3a', '2p', '2r', '1p']
-    - f3b(2, 2)         > ['2p', '2r', '1p']
-        - f3b(1, 2)     > ['1p']
-            - f3b(0, 2) > []
+    f3b(3, 2)                   > ['3p', '3r', '3a', '2p', '2r', '1p']
+    - f3b(2, 2)                 > ['2p', '2r', '1p']
+        - f3b(1, 2)             > ['1p']
+            - f3b(0, 2)         > []
     ```
 
     c. Evaluate `f3c(5, 2)` = `"hi,hey,bye.hi,hey,bye."`
     
     ```
-    f3c(5, 2)       > "hi,hey,bye.hi,hey,bye."
-    - f3c(4, 1)     > "hey,bye."
-        - f3c(4, 0) > "bye."
+    f3c(5, 2)                   > "hi,hey,bye.hi,hey,bye."
+    - f3c(4, 1)                 > "hey,bye."
+        - f3c(4, 0)             > "bye."
     ```
