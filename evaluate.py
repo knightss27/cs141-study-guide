@@ -3,43 +3,43 @@ evaluate.py
 
 Practice problems for on-paper evaluation.
 
-3x Basic Recursion
-3x Basic Loops
-3x Recursion with Loops
+1. 3x Basic Recursion
+2. 3x Basic Loops
+3. 3x Recursion with Loops
 
 """
 
 # Basic Recursion
 
-def f1(n, k):
+def f1a(n, k):
     if n == 0:
         return 1
 
-    return f1(n-1, k) * k
+    return f1a(n-1, k) * k
 
 # evaluate f1(5, 3)
 
-def f2(n, k):
+def f1b(n, k):
     if n == 1:
         return 1
 
-    return f2(n-1, k) * k
+    return f1b(n-1, k) * k
 
 # evaluate f2(6, 3)
 
-def f3(n, k):
+def f1c(n, k):
     if n < 5:
         if n == 1:
             return 1
-        return f3(n-1, k)
+        return f1c(n-1, k)
 
-    return f3(n-2, k) * k
+    return f1c(n-2, k) * k
 
 # evaluate f3(7, 3)
 
 # Basic Loops
 
-def f4(n, k):
+def f2a(n, k):
     c = 0
     for i in range(k):
         c += i
@@ -51,7 +51,7 @@ def f4(n, k):
 
 # evaluate f4(7, 3)
 
-def f5(n, k):
+def f2b(n, k):
     s = ""
     for i in range(k):
         s += str(n)
@@ -61,9 +61,9 @@ def f5(n, k):
 
     return s
 
-# evaluate f5(3, 10)
+# evaluate f5(3, 6)
 
-def f6(n, k):
+def f2c(n, k):
     l = [None] * k
     i = 0
     while i < k:
@@ -77,40 +77,42 @@ def f6(n, k):
 
 # Recursion with Loops
 
-def f7(n, k):
+def f3a(n, k):
     for i in range(k):
         if n > 3:
-            return f7(n-1, k)
-        return [i] + f7(n-1, k-1)
+            return f3a(n-1, k)
+        return [i] + f3a(n-1, k-1)
 
     return [n]
 
 # evaluate f7(5, 3)
 
-def f8(n, k):
+def f3b(n, k):
     if n <= 0:
         return []
 
     lst = []
     for s in "practice"[0:n]:
-        new = str(k) + s
+        new = str(n) + s
         lst.append(new)
 
-    return lst + f8(n-1, k)
+    return lst + f3b(n-1, k)
 
 # evaluate f8(3, 2)
 
-def f9(n, k):
+def f3c(n, k):
     if k <= 0:
         return "bye."
 
     s = ""
     for _ in range(k):
         if n % 2 == 1:
-            s += "hi," + f9(n-1, k-1)
+            s += "hi," + f3c(n-1, k-1)
         else:
-            s += "hey," + f9(n, k-1)
+            s += "hey," + f3c(n, k-1)
 
     return s
 
 # evaluate f9(5, 2)
+
+print(f3c(5, 2))
