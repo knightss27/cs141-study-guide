@@ -9,7 +9,7 @@ Practice problems for on-paper evaluation.
 
 """
 
-# Basic Recursion
+# 1 - Basic Recursion ---------------------------------------------------------
 
 def f1a(n, k):
     """
@@ -40,7 +40,7 @@ def f1c(n, k):
 
     return f1c(n-2, k) * k
 
-# Basic Loops
+# 2 - Basic Loops -------------------------------------------------------------
 
 def f2a(n, k):
     """
@@ -81,7 +81,7 @@ def f2c(n, k):
 
     return l
 
-# Recursion with Loops
+# 3 - Recursion with Loops ----------------------------------------------------
 
 def f3a(n, k):
     """
