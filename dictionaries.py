@@ -54,7 +54,7 @@ def get_student_late_days(students, days):
     cumulative, semesterly basis only for those with 2 or more tardies each week.
     This should not affect the name of the student with the least tardies.
 
-    The function shoudl return a tuple, where the first item is the dict containing
+    The function should return a tuple, where the first item is the dict containing
     students names and their number of tardies for the week, and the second item
     is the name of the student with the least tardies that week.
 
@@ -77,8 +77,8 @@ def get_student_late_days(students, days):
     best_student: 'Jane'
 
     Args:
-        students (_type_): The list of students to calculate late days for
-        days (_type_): 2d array consisting of lists of length 5 corresponding
+        students (list[str]): The list of students to calculate late days for
+        days (list[list[bool]]): 2d array consisting of lists of length 5 corresponding
             to each school day, where True is if they came late, False otherwise
     """
     raise NotImplementedError
