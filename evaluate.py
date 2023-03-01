@@ -12,22 +12,27 @@ Practice problems for on-paper evaluation.
 # Basic Recursion
 
 def f1a(n, k):
+    """
+    Evaluate f1a(5, 3)
+    """
     if n == 0:
         return 1
 
     return f1a(n-1, k) * k
 
-# evaluate f1(5, 3)
-
 def f1b(n, k):
+    """
+    Evaluate f1b(6, 3)
+    """
     if n == 1:
         return 1
 
     return f1b(n-1, k) * k
 
-# evaluate f2(6, 3)
-
 def f1c(n, k):
+    """
+    Evaluate f1c(7, 3)
+    """
     if n < 5:
         if n == 1:
             return 1
@@ -35,11 +40,12 @@ def f1c(n, k):
 
     return f1c(n-2, k) * k
 
-# evaluate f3(7, 3)
-
 # Basic Loops
 
 def f2a(n, k):
+    """
+    Evaluate f2a(7, 3)
+    """
     c = 0
     for i in range(k):
         c += i
@@ -49,9 +55,10 @@ def f2a(n, k):
 
     return c
 
-# evaluate f4(7, 3)
-
 def f2b(n, k):
+    """
+    Evaluate f2b(3, 10)
+    """
     s = ""
     for i in range(k):
         s += str(n)
@@ -61,9 +68,10 @@ def f2b(n, k):
 
     return s
 
-# evaluate f5(3, 6)
-
 def f2c(n, k):
+    """
+    Evaluate f2c(3, 5)
+    """
     l = [None] * k
     i = 0
     while i < k:
@@ -73,11 +81,12 @@ def f2c(n, k):
 
     return l
 
-# evaluate f6(3, 7)
-
 # Recursion with Loops
 
 def f3a(n, k):
+    """
+    Evaluate f3a(5, 3)
+    """
     for i in range(k):
         if n > 3:
             return f3a(n-1, k)
@@ -85,9 +94,10 @@ def f3a(n, k):
 
     return [n]
 
-# evaluate f7(5, 3)
-
 def f3b(n, k):
+    """
+    Evaluate f3b(3, 2)
+    """
     if n <= 0:
         return []
 
@@ -98,9 +108,10 @@ def f3b(n, k):
 
     return lst + f3b(n-1, k)
 
-# evaluate f8(3, 2)
-
 def f3c(n, k):
+    """
+    Evaluate f3c(5, 2)
+    """
     if k <= 0:
         return "bye."
 
@@ -112,7 +123,3 @@ def f3c(n, k):
             s += "hey," + f3c(n, k-1)
 
     return s
-
-# evaluate f9(5, 2)
-
-print(f3c(5, 2))
