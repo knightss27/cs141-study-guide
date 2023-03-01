@@ -80,9 +80,37 @@ def f6(n, k):
 def f7(n, k):
     for i in range(k):
         if n > 3:
-            return f4(n-1, k)
-        return [i] + f4(n-1, k-1)
+            return f7(n-1, k)
+        return [i] + f7(n-1, k-1)
 
-    return []
+    return [n]
 
-# evaluate f5(5, 3)
+# evaluate f7(5, 3)
+
+def f8(n, k):
+    if n <= 0:
+        return []
+
+    lst = []
+    for s in "practice"[0:n]:
+        new = str(k) + s
+        lst.append(new)
+
+    return lst + f8(n-1, k)
+
+# evaluate f8(3, 2)
+
+def f9(n, k):
+    if k <= 0:
+        return "bye."
+
+    s = ""
+    for _ in range(k):
+        if n % 2 == 1:
+            s += "hi," + f9(n-1, k-1)
+        else:
+            s += "hey," + f9(n, k-1)
+
+    return s
+
+# evaluate f9(5, 2)
