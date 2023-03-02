@@ -12,6 +12,7 @@ def random_odd_in_range(n, seed):
 
     Args:
         n (int): inclusive end of range
+        seed (int): the seed for the random number
 
     Returns:
         int: random number in range
