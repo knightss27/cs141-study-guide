@@ -39,7 +39,7 @@ def get_cross_class_grades(students, shared_classes):
 
 # 2 ---------------------------------------------------------------------------
 def get_student_late_days(students, days):
-    """ Return students' late day matrices and the best attending student.
+    """ Return students' late day counts and the best attending student.
 
     This very same school also wants to be able to calculate the number of 
     tardies (late days) for each student's weekly report, as well as find out
@@ -80,5 +80,68 @@ def get_student_late_days(students, days):
         students (list[str]): The list of students to calculate late days for
         days (list[list[bool]]): 2d array consisting of lists of length 5 corresponding
             to each school day, where True is if they came late, False otherwise
+    """
+    raise NotImplementedError
+
+# 3 ---------------------------------------------------------------------------
+def create_student_reports(students, shared_classes, weeks):
+    """ Return students report cards.
+
+    Last but not least, this school wants to take in all of the info for the
+    whole semester, and generate a report card for each student. You are given 
+    three inputs, one an array of student names, second a dictionary representing
+    shared classes among these students and their respective grades (in the same 
+    format as used above), and lastly a 3d array of weeks, where each week
+    consists of a 2d, boolean array of late days for each student (also in the
+    same format as used above). Return a dictionary where the keys are students,
+    and the values represent a report card for each student.
+
+    Each report card should be a dictionary with three entries: 
+        name: the name of the student
+        avg_grade: the cross-class average grade for the student
+        late_days: the total number of late days (exluding weeks with < 2 tardies) 
+
+    students = ["John", "Mary", "Jane", "Jack"]
+    shared_classes = {
+        "CMSC 14100": [80.0, 90.0, 95.0, 89.0],
+        "HUMA 12300": [91.0, 92.0, 70.0, 98.0],
+        "SOSC 13200": [89.0, 95.0, 80.0, 91.0],
+        "SPAN 10200": [90.0, 88.0, 85.0, 74.0],
+    }
+    late_days = [
+        [
+            [False, True,  True, True, False],
+            [True, False, True, False, True],
+            [False, False, False, True, False],
+            [False, False, True, True, False],
+        ],
+        [
+            [False, True, True, True, False],
+            [True, False, True, False, True],
+            [False, True, False, True, False],
+            [False, False, True, True, False],
+        ],
+        [
+            [False, True, False, True, False],
+            [True, False, True, False, False],
+            [False, False, False, True, False],
+            [False, False, True, False, False],
+        ],
+    ]
+    
+    reports = create_student_reports(students, shared_classes, late_days)
+    
+    Then:
+    {
+        'John': {'name': 'John', 'avg_grade': 87.5, 'late_days': 8},
+        'Mary': {'name': 'Mary', 'avg_grade': 91.25, 'late_days': 8},
+        'Jane': {'name': 'Jane', 'avg_grade': 82.5, 'late_days': 2},
+        'Jack': {'name': 'Jack', 'avg_grade': 88.0, 'late_days': 4}
+    }
+
+    Args:
+        students (list[str]): _description_
+        shared_classes (dict[str, list[float]]): _description_
+        weeks (list[list[list[bool]]]): _description_
     """
     raise NotImplementedError
