@@ -27,16 +27,15 @@ def get_cross_class_grades(students, shared_classes):
     return avgs
 
 # Testing code for get_cross_class_grades
-students = ["John", "Mary", "Jane", "Jack"]
-shared_classes = {
-    "CMSC 14100": [80.0, 90.0, 95.0, 89.0],
-    "HUMA 12300": [91.0, 92.0, 70.0, 98.0],
-    "SOSC 13200": [89.0, 95.0, 80.0, 91.0],
-    "SPAN 10200": [90.0, 88.0, 85.0, 74.0],
-}
-
-cross_class_avgs = get_cross_class_grades(students, shared_classes)
-print(cross_class_avgs)
+# students = ["John", "Mary", "Jane", "Jack"]
+# shared_classes = {
+#     "CMSC 14100": [80.0, 90.0, 95.0, 89.0],
+#     "HUMA 12300": [91.0, 92.0, 70.0, 98.0],
+#     "SOSC 13200": [89.0, 95.0, 80.0, 91.0],
+#     "SPAN 10200": [90.0, 88.0, 85.0, 74.0],
+# }
+# cross_class_avgs = get_cross_class_grades(students, shared_classes)
+# print(cross_class_avgs)
 
 # 2 ---------------------------------------------------------------------------
 def get_student_late_days(students, days):
@@ -68,65 +67,70 @@ def get_student_late_days(students, days):
     return (lates, best_student)
 
 # Testing code for get_student_late_days
-students = ["John", "Mary", "Jane", "Jack"]
-late_days = [
-    [False, True, True, True, False],
-    [True, False, True, False, True],
-    [False, False, False, True, False],
-    [False, False, True, True, False],
-]
-
-per_student_counts, best = get_student_late_days(students, late_days)
-print(per_student_counts, best)
+# students = ["John", "Mary", "Jane", "Jack"]
+# late_days = [
+#     [False, True, True, True, False],
+#     [True, False, True, False, True],
+#     [False, False, False, True, False],
+#     [False, False, True, True, False],
+# ]
+# per_student_counts, best = get_student_late_days(students, late_days)
+# print(per_student_counts, best)
 
 # 3 ---------------------------------------------------------------------------
 def create_student_reports(students, shared_classes, weeks):
     """
     Example implementation
     """
+    # instantiate the report dict
     reports = {}
+    # get the grade averages
     averages = get_cross_class_grades(students, shared_classes)
+    # get the late_days dict for each week, as an array of dictionaries
     weekly_lates = [get_student_late_days(students, week) for week in weeks]
 
+    # for each student
     for student in students:
+        # construct the report card
         reports[student] = {
             "name": student,
             "avg_grade": averages[student],
             "late_days": 0
         }
 
+        # add up the late days for each week
         for week in weekly_lates:
             reports[student]["late_days"] += week[0][student]
 
     return reports
 
-students = ["John", "Mary", "Jane", "Jack"]
-shared_classes = {
-    "CMSC 14100": [80.0, 90.0, 95.0, 89.0],
-    "HUMA 12300": [91.0, 92.0, 70.0, 98.0],
-    "SOSC 13200": [89.0, 95.0, 80.0, 91.0],
-    "SPAN 10200": [90.0, 88.0, 85.0, 74.0],
-}
-late_days = [
-    [
-        [False, True,  True, True, False],
-        [True, False, True, False, True],
-        [False, False, False, True, False],
-        [False, False, True, True, False],
-    ],
-    [
-        [False, True, True, True, False],
-        [True, False, True, False, True],
-        [False, True, False, True, False],
-        [False, False, True, True, False],
-    ],
-    [
-        [False, True, False, True, False],
-        [True, False, True, False, False],
-        [False, False, False, True, False],
-        [False, False, True, False, False],
-    ],
-]
-
-reports = create_student_reports(students, shared_classes, late_days)
-print(reports)
+# Testing code for create_student_reports
+# students = ["John", "Mary", "Jane", "Jack"]
+# shared_classes = {
+#     "CMSC 14100": [80.0, 90.0, 95.0, 89.0],
+#     "HUMA 12300": [91.0, 92.0, 70.0, 98.0],
+#     "SOSC 13200": [89.0, 95.0, 80.0, 91.0],
+#     "SPAN 10200": [90.0, 88.0, 85.0, 74.0],
+# }
+# late_days = [
+#     [
+#         [False, True,  True, True, False],
+#         [True, False, True, False, True],
+#         [False, False, False, True, False],
+#         [False, False, True, True, False],
+#     ],
+#     [
+#         [False, True, True, True, False],
+#         [True, False, True, False, True],
+#         [False, True, False, True, False],
+#         [False, False, True, True, False],
+#     ],
+#     [
+#         [False, True, False, True, False],
+#         [True, False, True, False, False],
+#         [False, False, False, True, False],
+#         [False, False, True, False, False],
+#     ],
+# ]
+# reports = create_student_reports(students, shared_classes, late_days)
+# print(reports)
