@@ -4,6 +4,12 @@ A collection of hand-written practice problems from yours truly <3.
 
 How to use this repository:
 
+First, clone it if you want:
+```
+$ git clone https://github.com/knightss27/cs141-study-guide.git
+$ cd cs141-study-guide
+```
+
 1. Try being a computer in [evaluate.py](/evaluate.py)
 2. Test your knowledge of arrays in [arrays.py](/arrays.py)
 3. Polish up your dictionary skills in [dictionaries.py](/dictionaries.py)
