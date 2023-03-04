@@ -48,7 +48,7 @@
     c = 6
     ```
 
-    b. Evaluate `f2b(3, 10)` = `"ZPZPZP"`
+    b. Evaluate `f2b(3, 10)` = `"ZPZPZPZPZP"`
 
     ```
     s = ""
@@ -58,7 +58,8 @@
       = "3333"
       = "33333"
       = "333333"
-      = "ZPZPZP"
+      ...
+      = "ZPZPZPZPZP"
     ```
 
     c. Evaluate `f2c(3, 5)` = `[3   , 2   , 2   , None, None]`
